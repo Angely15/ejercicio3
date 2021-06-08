@@ -1,0 +1,88 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imglogo{
+    width: 5rem;
+    height: 5rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #000000;
+}
+
+.card__header {
+    padding: .3rem;
+}
+
+.card__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    border: .1rem solid #000000;
+    padding: .3rem 1rem;
+}
+
+.Wrapper__form{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.09rem 0;
+    width: 26rem;
+    margin: .4rem;
+    
+}
+
+.Wrapper__form select {
+    width: 12rem;
+}
+
+.Wrapper__form input{
+
+    width: 11.5rem;
+}
+
+
+.candidatos{
+    padding: .4rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: .3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.candidato{
+    display: flex;
+    flex-direction: column;
+    border: .1rem solid #000000;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 20rem;
+}
+
+.candidato__number{
+    position: absolute;
+    font-size: 6rem;
+    margin: 0;
+    z-index: 3;
+    top: 0;
+    left: 0;
+}
+
+.candidato img {
+    height: 10rem;
+    width: 10rem;
+}

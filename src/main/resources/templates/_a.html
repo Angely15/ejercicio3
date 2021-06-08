@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <title>index</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card__header">
+            <img class="imglogo" src="/img/images.png" alt="" />
+        </div>
+        <div class="card__header">
+            <form method="POST" action="">
+                <div class="Wrapper">
+                    <div class="Wrapper__form">
+                        <label for="estamento">Estamento:</label>
+                        <select name="estamento" id="estamento">
+                            <option value="default">Seleccione el estamento</option>
+                            <th:block th:each="estamento : ${estamentos}">
+                                <option th:value="${estamento.id}"  th:text="${estamento.descripcion}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                    <div class="Wrapper__form">
+                        <label for="tipoDocumento">Tipo De Documento:</label>
+                        <select name="tipoDocumento" id="tipoDocumento">
+                            <option value="default">
+                                Seleccione el tipo de documento
+                            </option>
+                        <th:block th:each="tdocumento : ${tdocumentos}">
+                            <option th:value="${tdocumento.id}"  th:text="${tdocumento.descripcion}"></option>
+                        </th:block>
+                        </select>
+                    </div>
+                    <div class="Wrapper__form">
+                        <label for="">Documento</label>
+                        <input type="text" />
+                    </div>
+                    <div class="Wrapper__form">
+                        <label for="">Nombre</label>
+                        <input type="text" />
+                    </div>
+                    <div class="Wrapper__form">
+                        <label for="">Email</label>
+                        <input type="text" />
+                    </div>
+                    <div class="Wrapper__form">
+                        <label for="proceso">Proceso</label>
+                        <select name="proceso" id="proceso">
+                            <option value="default">Seleccione el proceso cosulta</option>
+                            <th:block th:each="proceso : ${procesos}">
+                                <option th:value="${proceso.id}"  th:text="${proceso.descripcion}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                    <button type="submit">Registrar Votante</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

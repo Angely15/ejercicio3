@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card__header">
+          <img class="imglogo" src="/img/images.png" alt="" />
+        </div>
+        <div class="card__body">
+          <div class="candidatos">
+            <th:block th:each="candidato : ${candidatos}">
+            <div class="candidato">
+              <p class="candidato__number" th:text="${candidato.numero}>1</p>
+              <img src="/img/user1.png" alt="">
+              <p th:text="${candidato.nombre + candidato.apellido}></p>
+            </div>
+            </th:block>
+          </div>
+          <button type="submit">Confirmo mi voto</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
