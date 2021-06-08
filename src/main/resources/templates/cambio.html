@@ -17,9 +17,9 @@
           <div class="candidatos">
             <th:block th:each="candidato : ${candidatos}">
             <div class="candidato">
-              <p class="candidato__number" th:text="${candidato.numero}>1</p>
+              <p class="candidato__number" th:text="${candidato.numero}"></p>
               <img src="/img/user1.png" alt="">
-              <p th:text="${candidato.nombre + candidato.apellido}></p>
+              <p th:text="${candidato.nombre}+' '+${candidato.apellido}"></p>
             </div>
             </th:block>
           </div>

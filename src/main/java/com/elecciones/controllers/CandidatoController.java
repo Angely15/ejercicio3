@@ -10,8 +10,7 @@ import com.elecciones.services.EstamentoService;
 import com.elecciones.services.TipodocumentoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*
 
 
 import java.util.List;
@@ -52,12 +51,19 @@ public class CandidatoController {
         return "cambio";
     }
 
-
-
-
-
-    //metodo recuerda en la web solo hay gets, para los parametros un ejemplo /candidato/id se escribe /{id} para conseguir esta id haces en el parametro del metodo debajo del decorador @PathVariable Integer id por ejemplo
-    // puedes revisar aqui para eso https://github.com/StacklyCode/stacklyCode-team-backend/blob/dev/src/main/java/com/example/stacklyteam/web/resources/SkillResources.java
-    // para pedir un objeto @RequestBody y el tipo por ejemplo aqui en el create yo haria un @RequestBody Candidato candidato
+    @PostMapping("/")
+    public String confirmar(@RequestParam("nombre") String nombre,
+                            @RequestParam("email") String email,
+                            @RequestParam("estamento") String estamento,
+                            @RequestParam("proceso") String proceso,
+                            Model modelo){
+        List<Tipodocumento> tdocumentos = tipodocumentoService.findAll();
+        modelo.addAttribute("nombre",nombre);
+        modelo.addAttribute("email",email);
+        modelo.addAttribute("tdocumentos",tdocumentos);
+        modelo.addAttribute("estamento",estamentoService.findOne(Integer.parseInt(estamento)));
+        modelo.addAttribute("proceso",eleccionService.findOne(Integer.parseInt(proceso)));
+        return "elecion";
+    }
 
 }

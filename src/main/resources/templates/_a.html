@@ -16,7 +16,7 @@
             <img class="imglogo" src="/img/images.png" alt="" />
         </div>
         <div class="card__header">
-            <form method="POST" action="">
+            <form method="post" action="/candidato/">
                 <div class="Wrapper">
                     <div class="Wrapper__form">
                         <label for="estamento">Estamento:</label>
@@ -40,22 +40,22 @@
                     </div>
                     <div class="Wrapper__form">
                         <label for="">Documento</label>
-                        <input type="text" />
+                        <input type="number" name="documento" id="documento" />
                     </div>
                     <div class="Wrapper__form">
                         <label for="">Nombre</label>
-                        <input type="text" />
+                        <input type="text" name="nombre" id="nombre" />
                     </div>
                     <div class="Wrapper__form">
                         <label for="">Email</label>
-                        <input type="text" />
+                        <input type="email" name="email" id="email"/>
                     </div>
                     <div class="Wrapper__form">
                         <label for="proceso">Proceso</label>
                         <select name="proceso" id="proceso">
                             <option value="default">Seleccione el proceso cosulta</option>
                             <th:block th:each="proceso : ${procesos}">
-                                <option th:value="${proceso.id}"  th:text="${proceso.descripcion}"></option>
+                                <option th:value="${proceso.id}"  th:text="${proceso.nombre}"></option>
                             </th:block>
                         </select>
                     </div>
